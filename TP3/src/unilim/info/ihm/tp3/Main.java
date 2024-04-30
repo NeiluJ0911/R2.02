@@ -159,7 +159,7 @@ public class Main extends Application {
 			}
 		});
 		
-		sauvegarder.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		photo.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
 				ChoixPhotoController choixPhotoController = new ChoixPhotoController(cheminImage, primaryStage);
