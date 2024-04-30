@@ -32,7 +32,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
+	/*
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -119,9 +119,9 @@ public class Main extends Application {
 		primaryStage.setWidth(700);
 		primaryStage.setHeight(500);
 		primaryStage.show();
-		
+		*/
 		// Instanciation des différents composants
-		/*
+		
 		Label titreSouligne = new Label();
 		titreSouligne.setText("Souscrivez à notre newsletter !");
 		
@@ -287,7 +287,7 @@ public class Main extends Application {
 		
 		
 		// Instanciation de la scène
-		*/
+		
 	}
 
 }

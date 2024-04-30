@@ -50,7 +50,6 @@ public class Main extends Application {
 		TextField taperType = new TextField();
 		
 		Label erreurType = new Label();
-		erreurType.setText("Le type est obligatoire");
 		erreurType.setVisible(false);
 		erreurType.setPadding(new Insets(5, 0, 0, 0));
 		erreurType.setTextFill(Color.RED);
@@ -117,10 +116,16 @@ public class Main extends Application {
 				}
 					
 				if (taperType.getLength() == 0) {
+					erreurType.setText("Le type est obligatoire");
 					erreurType.setVisible(true);
 				}
 				else {
-					erreurType.setVisible(false);
+					if(!taperType.getText().equals("Fruit") && !taperType.getText().equals("Légume")) {
+						erreurType.setText("Le type doit être Fruit ou Légume");
+					}
+					else {
+						erreurType.setVisible(false);
+					}
 				}
 				if (taperPrix.getLength() == 0) {
 					erreurPrix.setVisible(true);
@@ -148,7 +153,7 @@ public class Main extends Application {
 		vboxSauvegarde.setPadding(new Insets(10,2,10,20));
 		vboxSauvegarde.setMinWidth(390);
 		root.add(vboxSauvegarde, 0, 0);
-				
+		
 		VBox vboxListe = new VBox(titreListe);
 		vboxListe.setPadding(new Insets(10,20,10,2));
 		vboxListe.setMinWidth(390);
