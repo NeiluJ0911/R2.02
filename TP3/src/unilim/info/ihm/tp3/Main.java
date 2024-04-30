@@ -1,5 +1,7 @@
 package unilim.info.ihm.tp3;
 
+import java.awt.event.ActionEvent;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -15,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import unlim.info.ihm.tp3.controller.ChoixPhotoController;
 
 public class Main extends Application {
 	
@@ -142,7 +145,28 @@ public class Main extends Application {
 			}
 		});
 		
-
+		photo.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				System.out.println("event filter");
+			}
+		});
+		
+		photo.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				System.out.println("event handler");
+			}
+		});
+		
+		sauvegarder.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				ChoixPhotoController choixPhotoController = new ChoixPhotoController(cheminImage, primaryStage);
+				choixPhotoController.choisirImage();
+			}
+		});
+		
 		GridPane root = new GridPane();
 		
 		
